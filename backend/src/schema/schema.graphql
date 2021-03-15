@@ -1,5 +1,6 @@
 type Query {
   helloWorld: String!
+  hello2: String
 }
 
 type Mutation {

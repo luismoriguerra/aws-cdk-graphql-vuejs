@@ -31,7 +31,7 @@ export const main = (event: any, context: any) => {
 };
 
 if (!isInLambda) {
-  app.listen({ port: 8000 }, () => {
-    console.log("Apollo Server on http://localhost:8000/graphql");
+  app.listen({ port: 8080 }, () => {
+    console.log("Apollo Server on http://localhost:8080/graphql");
   });
 }

@@ -10,6 +10,7 @@ let idCount = links.length;
 const resolvers: IResolvers = {
   Query: {
     helloWorld: () => "Hello world from Apollo Server",
+    hello2: () => "hello2",
   },
   Mutation: {
     post: (parent, args) => {
