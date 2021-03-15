@@ -4,9 +4,14 @@ cd backend
 yarn install --frozen-lockfile
 yarn build
 
+
+echo 'Installing Frontend '
+cd ../fronten
+yarn install --frozen-lockfile
+yarn build
+
 echo 'Deploying Infraestructure'
-cd ..
-cd cdk
+cd ../cdk
 yarn install --frozen-lockfile
 cdk diff
-cdk deploy  --debug --require-approval never
+cdk deploy --verbose --debug --require-approval never

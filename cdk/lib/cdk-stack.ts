@@ -1,6 +1,7 @@
 import * as cdk from "@aws-cdk/core";
 import { Tags } from "@aws-cdk/core";
 import { GraphAPI } from "./api";
+import { CDN } from "./cdn";
 import { Networking } from "./networking";
 import { WebServer } from "./server";
 
@@ -19,6 +20,9 @@ export class CdkStack extends cdk.Stack {
     const webserver = new WebServer(this, "LguerraWebServer", {
       vpc: networking.vpc,
     });
-    Tags.of(webserver).add("Module", "webserver");
+    Tags.of(webserver).add("Module", "lguerra-webserver");
+
+    const cdn = new CDN(this, "LguerraCDN");
+    Tags.of(cdn).add("Module", "lguerra-webserver");
   }
 }
